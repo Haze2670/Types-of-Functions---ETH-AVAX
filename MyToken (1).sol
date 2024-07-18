@@ -5,11 +5,19 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contr
 
 contract MyToken is ERC20 {
 
+    address public owner;
+
     constructor() ERC20("HAZE", "HZE") {
-        _mint(msg.sender, 1000000 * 10 ** uint256(decimals()));
+        owner = msg.sender;
+        _mint(owner, 1000000 * 10 ** uint256(decimals()));
     }
 
-    function mintTokens(address to, uint256 amount) public {
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only the owner can call this function");
+        _;
+    }
+
+    function mintTokens(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
     }
 
