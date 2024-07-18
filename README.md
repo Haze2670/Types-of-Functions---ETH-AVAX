@@ -1,15 +1,25 @@
 ERC20 token
 
-This Solidity smart contract implements the ERC20 standard with three main functions: Mint, Burn, and Transfer.
+MyToken is a smart contract implementing an ERC20 token named "HAZE" with the symbol "HZE". This contract allows for minting, transferring, and burning of tokens. 
+The minting function is restricted to the contract owner to control the token supply.
 
 Description
 This Solidity smart contract simulates a scenario where the contract owner can mint tokens for themselves or other users. Other users cannot mint tokens but can transfer and burn their own tokens.
 
-Getting Started
-Executing program
-To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.21+commit.d9974bed.js
+Getting Started with Remix
+Prerequisites
+Remix IDE
+Steps
+Open Remix IDE
 
-Once you are on the Remix website, create a new file by right-clicking clicking on the window on the left and clicking on new file. Save the file with a .sol extension (e.g., ErrorHandling.sol). Copy and paste the following code into the file:
+Navigate to Remix IDE in your browser.
+Create a New File
+
+Click on the "File Explorer" icon in the sidebar.
+Click on the "New File" button and name it MyToken.sol.
+Copy Contract Code
+
+Copy the following contract code into the MyToken.sol file:
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -36,13 +46,20 @@ contract MyToken is ERC20 {
     
 }
 
-First, go to https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.21+commit.d9974bed.js
+Compile the Contract
 
-To get the code working, follow these steps:
+Click on the "Solidity Compiler" icon in the sidebar.
+Select the appropriate compiler version (0.8.0 or higher).
+Click on the "Compile MyToken.sol" button.
+Deploy the Contract
 
-on the left part of the website, right click and create new file and name the file Types-of-Functions---ETH-AVAX-Project.sol
-paste the code provided above
-on the left, click on the icon below the magnifying glass icon and it should show another window and press the blue button with the compile Types-of-Functions---ETH-AVAX-Project.sol written on it
-click on the icon that is below the compile icon and press the orange deploy button to deploy the contract
+Click on the "Deploy & Run Transactions" icon in the sidebar.
+Make sure the "Environment" is set to "JavaScript VM (London)".
+Click on the "Deploy" button.
+Interact with the Contract
+
+After deployment, you will see the deployed contract under "Deployed Contracts".
+You can now interact with the contract functions (mintTokens, transferTokens, burnTokens) directly from the Remix interface.
+
 Authors
 Raymark
